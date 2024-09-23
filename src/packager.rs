@@ -89,7 +89,7 @@ impl<W: Write + Seek + Send> Packager<W> {
             .compression_method(zip::CompressionMethod::Deflated)
             .unix_permissions(0o600)
             .last_modified_time(DateTime::default())
-            .large_file(false);
+            .large_file(true);
 
         let zip_options_for_binary_files =
             zip_options.compression_method(zip::CompressionMethod::Stored);
